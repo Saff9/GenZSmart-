@@ -1,119 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youngblood</title>
     <style>
-        /* RESET & BASE STYLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* MENU STYLES - GUARANTEED VISIBLE */
-        .main-menu {
-            background: #2c3e50;
-            padding: 15px 30px;
-            position: sticky;
+        /* GUARANTEED VISIBLE MENU */
+        nav {
+            background: black;
+            padding: 15px;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            width: 100%;
         }
-        .main-menu ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        .main-menu a {
+        nav a {
             color: white;
             text-decoration: none;
+            margin-right: 20px;
             font-weight: bold;
-            font-size: 18px;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .main-menu a:hover {
-            border-bottom: 2px solid #3498db;
-        }
-        
-        /* CONTENT STYLES */
-        section {
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1, h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .project-gallery {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-        article {
-            background: #f8f9fa;
-            padding: 25px;
-            margin: 20px 0;
-            border-left: 4px solid #3498db;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #2c3e50;
-            color: white;
         }
     </style>
 </head>
-<body>
-    <!-- GUARANTEED VISIBLE MENU -->
-    <nav class="main-menu">
-        <ul>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#articles">ARTICLES</a></li>
-        </ul>
+<body style="margin-top: 60px;"> <!-- Prevents menu overlap -->
+    <!-- SIMPLE MENU -->
+    <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#articles">ARTICLES</a>
     </nav>
 
+    <!-- Your existing content below -->
     <section id="about">
         <h1>About Youngblood</h1>
-        <p>This section contains information about you or your project.</p>
-        <p>Customize this text to introduce yourself.</p>
+        <p>Your existing content here...</p>
     </section>
-
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-gallery">
-            <img src="images/project1.jpg" alt="Project 1" width="300">
-            <img src="images/project2.jpg" alt="Project 2" width="300">
-            <img src="images/project3.jpg" alt="Project 3" width="300">
-        </div>
-    </section>
-
-    <section id="articles">
-        <h2>Latest Articles</h2>
-        <article>
-            <h3>Article Title 1</h3>
-            <p>This is a summary of your first article. Include key points or the introduction here.</p>
-            <a href="#">Read more →</a>
-        </article>
-        <article>
-            <h3>Article Title 2</h3>
-            <p>This is a summary of your second article. You can link to full articles on Medium or other platforms.</p>
-            <a href="#">Read more →</a>
-        </article>
-    </section>
-
-    <footer>
-        <p>Contact me at <a href="mailto:your.email@example.com" style="color: #3498db;">your.email@example.com</a></p>
-    </footer>
 </body>
 </html>
