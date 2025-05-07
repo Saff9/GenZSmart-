@@ -3,148 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PW Manzil Batch For JEE 2025</title>
+    <title>Youngblood | Portfolio</title>
     <style>
+        /* === Modern Purple Theme (like PW) === */
+        :root {
+            --primary: #6a1b9a;
+            --secondary: #4527a0;
+            --accent: #7e57c2;
+            --light-bg: #f3e5f5;
+            --dark-text: #333;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
+            color: var(--dark-text);
+            background: #f5f7fa;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f7fa;
+            padding: 0 20px;
         }
         
-        h1 {
-            color: #6a1b9a;
+        /* === Header/Nav === */
+        header {
+            background: var(--primary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* === Content Sections === */
+        .hero {
             text-align: center;
-            margin-bottom: 10px;
-        }
-        
-        h2 {
-            color: #4527a0;
-            border-bottom: 2px solid #7e57c2;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            padding: 60px 20px;
         }
         
         .highlight-box {
-            background-color: #f3e5f5;
-            border-left: 5px solid #7e57c2;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
+            background: var(--light-bg);
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            margin: 40px 0;
         }
         
-        .discount-banner {
-            background-color: #e8f5e9;
-            border: 1px dashed #2e7d32;
-            padding: 15px;
-            margin: 25px 0;
-            text-align: center;
-            font-weight: bold;
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
         
-        .features {
-            background-color: #e3f2fd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            margin-top: 40px;
         }
         
-        .features li {
-            margin-bottom: 8px;
-            list-style-type: none;
-            position: relative;
-            padding-left: 25px;
+        /* === Projects Grid === */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
         }
         
-        .features li:before {
-            content: "✓";
-            color: #1e88e5;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
         
-        .login-box {
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 40px auto;
+        .project-card:hover {
+            transform: translateY(-5px);
         }
         
-        .login-box h2 {
-            text-align: center;
-            color: #6a1b9a;
-            border-bottom: none;
-        }
-        
-        .btn {
-            display: block;
+        .project-card img {
             width: 100%;
-            padding: 12px;
-            background-color: #7b1fa2;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        /* === Footer === */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--primary);
             color: white;
-            border: none;
+            margin-top: 60px;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
             border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
             margin-top: 20px;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        .btn:hover {
-            background-color: #6a1b9a;
-        }
-        
-        .exam-link {
-            display: block;
-            text-align: center;
-            margin: 20px 0;
-            font-weight: bold;
-            color: #d81b60;
-            text-decoration: none;
-        }
-        
-        .exam-link:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Login/Register</h1>
-    
-    <div class="highlight-box">
-        <h2>PW Manzil Batch For JEE 2025</h2>
-        <p>Preparing for the JEE Main and Advanced exams is challenging and requires thorough preparation and the right resources. The PW Manzil Batch, specifically designed for <strong>JEE 2025</strong> aspirants, offers a comprehensive and free preparation course for all students aiming for JEE Main 2025.</p>
-        <p>With top-notch faculty from across India, this batch covers the complete JEE syllabus for Physics, Chemistry, and Mathematics. Classes will be streamed live on the <strong>JEE Wallah YouTube channel</strong>, providing students with valuable resources and support for their exam preparation.</p>
-    </div>
-    
-    <a href="#" class="exam-link">JEE 2025 Exam : Click to Check</a>
-    
-    <div class="discount-banner">
-        <h2>PW Manzil Batch 2025 Special Discounted Price</h2>
-        <p>We understand the financial challenges many students face, which is why the PW Manzil Batch is offered at a special discounted price for free. This ensures every aspiring student</p>
-    </div>
-    
-    <div class="features">
-        <ul>
-            <li>All Courses</li>
-            <li>Vidyapeeth</li>
-            <li>Upskilling - Job Assistance</li>
-            <li>PW Store (Books)</li>
-        </ul>
-    </div>
-    
-    <div class="login-box">
-        <h2>Login/Register</h2>
-        <a href="#" class="btn">Login</a>
-        <a href="#" class="btn">Register</a>
-    </div>
+    <!-- Header with 3-menu -->
+    <header>
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>YOUNGBLOOD</h1>
+        <p>Designer & Developer Portfolio</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="highlight-box">
+            <h2>About Me</h2>
+            <p>I'm a passionate creator specializing in modern web design and development. My work focuses on clean aesthetics and functional user experiences.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>E-Commerce Website</h3>
+                    <p>Full-stack development with React and Node.js</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Mobile App UI</h3>
+                    <p>Figma design for fitness application</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h3>Brand Identity</h3>
+                    <p>Logo and visual system for startup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <a href="mailto:your.email@example.com" class="contact-btn">Contact Me</a>
+    </footer>
 </body>
 </html>
