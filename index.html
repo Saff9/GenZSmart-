@@ -4,34 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youngblood</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Left-aligned menu */
+        .top-menu {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+        }
+        
+        .top-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .top-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .top-menu a:hover {
+            color: #3498db;
+        }
+        
+        /* Content sections */
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        article {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #2c3e50;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Youngblood</h1>
-        <nav>
-            <header>
-    <h1>Welcome to Youngblood</h1>
-    <nav style="float: right; margin-top: -50px;">
-        <a href="#about">About</a> |
-        <a href="#projects">Projects</a> |
-        <a href="#contact">Contact</a>
+    <!-- Left-aligned menu -->
+    <nav class="top-menu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#articles">Articles</a></li>
+        </ul>
     </nav>
-</header>
-        </nav>
-    </header>
+    
+    <!-- Main content -->
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>This is where you introduce yourself or your project.</p>
+            <h1>About Youngblood</h1>
+            <p>This section contains information about you or your project. Customize this text to introduce yourself.</p>
         </section>
+        
         <section id="projects">
-            <h2>My Projects</h2>
-            <p>Showcase your work here.</p>
+            <h2>Featured Projects</h2>
+            <div class="gallery">
+                <img src="images/project1.jpg" alt="Project 1">
+                <img src="images/project2.jpg" alt="Project 2">
+                <img src="images/project3.jpg" alt="Project 3">
+            </div>
+        </section>
+        
+        <section id="articles">
+            <h2>Latest Articles</h2>
+            <article>
+                <h3>Article Title 1</h3>
+                <p>This is a summary of your first article. Include key points or the introduction here.</p>
+                <a href="#">Read more...</a>
+            </article>
+            <article>
+                <h3>Article Title 2</h3>
+                <p>This is a summary of your second article. You can link to full articles on Medium or other platforms.</p>
+                <a href="#">Read more...</a>
+            </article>
         </section>
     </main>
-    <footer id="contact">
-        <p>© 2024 Youngblood | Email: your@email.com</p>
+    
+    <footer>
+        <p>Contact me at <a href="mailto:your.email@example.com" style="color: #3498db;">your.email@example.com</a></p>
     </footer>
 </body>
-
+</html>
