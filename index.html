@@ -3,189 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youngblood | Portfolio</title>
-    <style>
-        /* === Modern Purple Theme (like PW) === */
-        :root {
-            --primary: #6a1b9a;
-            --secondary: #4527a0;
-            --accent: #7e57c2;
-            --light-bg: #f3e5f5;
-            --dark-text: #333;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-text);
-            background: #f5f7fa;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* === Header/Nav === */
-        header {
-            background: var(--primary);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        
-        nav a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        /* === Content Sections === */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        
-        .highlight-box {
-            background: var(--light-bg);
-            border-left: 5px solid var(--accent);
-            padding: 25px;
-            margin: 40px 0;
-        }
-        
-        h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        h2 {
-            color: var(--secondary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 8px;
-            margin-top: 40px;
-        }
-        
-        /* === Projects Grid === */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .project-info {
-            padding: 20px;
-        }
-        
-        /* === Footer === */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--primary);
-            color: white;
-            margin-top: 60px;
-        }
-        
-        .contact-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-    </style>
+    <meta name="description" content="Young Blood - A platform for young voices to be heard">
+    <meta name="author" content="Owais Dar">
+    <meta name="user-id" content="{{ user_id if user_id else '' }}">
+    <meta name="user-name" content="{{ user_name if user_name else '' }}">
+    <title>Young Blood - Share Your Voice</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
-    <!-- Header with 3-menu -->
     <header>
         <nav>
-            <a href="#about">ABOUT</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#contact">CONTACT</a>
+            <div class="logo">Young Blood</div>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-content">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#write">Write</a></li>
+                
+</ul>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search articles...">
+                    <button id="search-btn">🔍</button>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>YOUNGBLOOD</h1>
-        <p>Designer & Developer Portfolio</p>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <h1>Young Blood</h1>
+            <p>A platform for young voices to be heard</p>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="highlight-box">
-            <h2>About Me</h2>
-            <p>I'm a passionate creator specializing in modern web design and development. My work focuses on clean aesthetics and functional user experiences.</p>
+        <section id="articles" class="articles">
+            <h2>Latest Articles</h2>
+            <div id="articles-container"></div>
+        </section>
+
+        <section id="write" class="write-form" style="display: none;">
+            <h2>Write Your Article</h2>
+            <div class="auth-message">Please login with your Replit account to write articles</div>
+            <form id="article-form">
+                <input type="text" id="title" placeholder="Article Title" required>
+                <input type="text" id="author" placeholder="Your Name" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="technology">Technology</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="health">Health</option>
+                    <option value="education">Education</option>
+                    <option value="culture">Culture</option>
+                </select>
+                <input type="file" id="image" accept="image/*">
+                <div class="image-preview" id="image-preview"></div>
+                <textarea id="content" placeholder="Write your article here..." required></textarea>
+                <button type="submit">Publish Article</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Young Blood. All rights reserved.</p>
+        <div class="developer-info">
+            <p>Made with ❤️ by <span class="developer">Owais Dar</span></p>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="images/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3>E-Commerce Website</h3>
-                    <p>Full-stack development with React and Node.js</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/project2.jpg" alt="Project 2">
-                <div class="project-info">
-                    <h3>Mobile App UI</h3>
-                    <p>Figma design for fitness application</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/project3.jpg" alt="Project 3">
-                <div class="project-info">
-                    <h3>Brand Identity</h3>
-                    <p>Logo and visual system for startup</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <footer id="contact">
-        <h2>Get In Touch</h2>
-        <a href="mailto:your.email@example.com" class="contact-btn">Contact Me</a>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
