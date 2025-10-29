@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GenZ Smart — Admin</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="dark">
+  <div class="container admin-container">
+    <header class="site-header">
+      <div class="brand"><img src="assets/logo.png" alt="logo" class="logo-img"/><div class="brand-text"><div class="site-title">GenZ Smart</div><div class="site-subtitle">Community • Ideas • Motivation</div></div></div>
+      <div class="header-actions"><button id="themeToggleAdmin" class="icon-btn"><i class="fas fa-sun"></i></button></div>
+    </header>
+
+    <nav class="tabs">
+      <a class="tab" href="index.html">Home</a>
+      <a class="tab" href="blog.html">Blog</a>
+      <a class="tab" href="about.html">About</a>
+      <a class="tab active" href="admin.html">Admin</a>
+    </nav>
+
+    <main>
+      <section class="admin-panel" id="adminPanelLocal">
+        <h3><i class="fas fa-cog"></i> Admin Dashboard</h3>
+        <div class="admin-stats">
+          <div class="admin-stat"><div id="adminPostCount" class="admin-stat-value">0</div><div class="admin-stat-label">Total Posts</div></div>
+          <div class="admin-stat"><div id="adminTodayPosts" class="admin-stat-value">0</div><div class="admin-stat-label">Today's Posts</div></div>
+          <div class="admin-stat"><div id="adminLikes" class="admin-stat-value">0</div><div class="admin-stat-label">Total Likes</div></div>
+          <div class="admin-stat"><div id="adminViews" class="admin-stat-value">0</div><div class="admin-stat-label">Total Views</div></div>
+        </div>
+
+        <div class="admin-actions">
+          <button id="newPostBtnLocal" class="btn-primary"><i class="fas fa-plus"></i> New Post</button>
+          <button id="exportDataBtnLocal" class="btn-ghost"><i class="fas fa-download"></i> Export Data</button>
+          <button id="logoutBtnLocal" class="btn-ghost"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <div id="composerLocal" class="composer" style="display:none">
+          <div class="comp-row"><div class="comp-avatar">GZ</div>
+          <div class="comp-box">
+            <div class="comp-title">
+              <input id="composeTitleLocal" class="small-input" placeholder="Title (optional)" />
+              <input id="composeImageLocal" class="small-input" placeholder="Image URL (optional)" />
+            </div>
+            <div class="category-selector">
+              <div class="category-option selected" data-category="thoughts">Thoughts</div>
+              <div class="category-option" data-category="tech">Tech</div>
+              <div class="category-option" data-category="motivation">Motivation</div>
+              <div class="category-option" data-category="ideas">Ideas</div>
+              <div class="category-option" data-category="life">Life</div>
+            </div>
+            <div id="editorContainerLocal"></div>
+            <div class="comp-meta"><div>Publishing as <strong>GenZ Owais</strong></div>
+            <div style="display:flex;gap:10px"><button id="cancelComposeLocal" class="btn-ghost">Cancel</button><button id="publishBtnLocal" class="btn-primary"><i class="fas fa-paper-plane"></i> Publish</button></div></div>
+          </div></div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
